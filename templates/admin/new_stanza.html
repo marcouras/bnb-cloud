@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block admin %}
+    <div class="home">
+
+        <div class="home_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_content text-center">
+                            <h2 style="color: black;">Inserisci nuova stanza</h2>
+                            <div class="booking_form_container">
+                                <form action="{{ url_for('nuova_stanza') }}" class="booking_form" method="post">
+                                    <div class="d-flex flex-xl-row flex-column align-items-start justify-content-start">
+                                        <div class="booking_input_container d-flex flex-lg-row flex-column align-items-start justify-content-start">
+
+                                            <div><input name="nome_stanza" type="text" class="form-control"
+                                                        placeholder="Nome Stanza"
+                                                        required="required"></div>
+                                            <div><input name="numero" type="text" class="form-control"
+                                                        placeholder="Numero"
+                                                        required="required"></div>
+                                            <div><input name="piano" type="text" class="form-control"
+                                                        placeholder="Piano"
+                                                        required="required"></div>
+
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-xl-row flex-column align-items-start justify-content-start"
+                                         style="margin-top: 15px">
+                                        <div class="booking_input_container d-flex flex-lg-row flex-column align-items-start justify-content-start">
+                                            <div><input name="prezzo" type="text" class="form-control"
+                                                        placeholder="Prezzo"
+                                                        required="required"></div>
+                                            <div><select name="tipologia" type="text" class="form-control"
+                                                         required="required">
+                                                <option value="singola">Singola</option>
+                                                <option value="matrimoniale">Matrimoniale</option>
+                                            </select></div>
+                                        </div>
+                                    </div>
+                                    <div style="margin-top: 15px">
+                                        <button type="submit" class="booking_button trans_200">Inserisci</button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
