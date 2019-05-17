@@ -2,7 +2,7 @@ import uuid
 
 from google.appengine.ext import ndb
 
-from models.Stanze import Stanza
+from models.stanzeModel import Stanza
 
 
 def getAllStanze():

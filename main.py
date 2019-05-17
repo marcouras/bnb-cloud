@@ -1,9 +1,41 @@
+from controllers.auth import GoogleLogin
+from data_access.commentiDA import insertCommento, getAllCommenti
 from flask import *
 app = Flask(__name__)
 
+googler = GoogleLogin()
+
+
 @app.route('/')
 def index():
-    return render_template('index.html')
+    comments = getAllCommenti()
+    return render_template('index.html', comments=comments)
+
+
+@app.route('/submitComment', methods=['POST'])
+def submitComment():
+        if "first_step" not in session:
+            form = request.form
+            session['message'] = form['testo']
+            return redirect(googler.step1())
+        else:
+            try:
+                userinfo = googler.userinfo()
+                result = insertCommento(session['message'], userinfo)
+                session.clear()
+                flash(result)
+            except Exception as e:
+                session.clear()
+                flash("Commento non inserito!")
+
+            return redirect(url_for('main.index'))
+
+
+@app.route('/authorization')
+def google_authorized():
+    googler.step2()
+    return redirect(url_for('submitComment'))
+
 
 #####################################################
 #                   ADMIN SIDE                      #
@@ -36,7 +68,6 @@ def remove_stanza():
 @app.route('/admin/removeAll')
 def remove_all():
     return redirect(url_for('admin'))
-
 
 
 if __name__ == '__main__':
