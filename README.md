@@ -32,6 +32,6 @@ Annotare l'ID del progetto (Attenzione: potrebbe essere diverso dal nome perché
 
 Completati i passaggi su GCP, si passa ora a configurare il progetto. Sarà necessario scaricare questo repository e modificare alcuni file di configurazione.
 
-Il primo passo è quello di installare il software development kit (sdk) per Google App Engine, il quale è ocntenut all'interno della Google Cloud Platform SDK e Python. Qui si trova il [tutorial](https://cloud.google.com/appengine/docs/standard/python/download) con i link utili e le istruzioni.
+Il primo passo è quello di installare il software development kit (sdk) per Google App Engine, il quale è ocntenuto all'interno della Google Cloud Platform SDK e Python. Qui si trova il [tutorial](https://cloud.google.com/appengine/docs/standard/python/download) con i link utili e le istruzioni.
 
 Seguire poi [questo tutorial](https://cloud.google.com/appengine/docs/standard/python/getting-started/deploying-the-application) per effettuare il deploy dell'applicazione.
